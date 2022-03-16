@@ -51,7 +51,7 @@ nav form select{
 
 section.list{
     min-height: 90vh;
-    background-color: rgb(255, 202, 255);
+    background-color: rgb(88, 75, 88);
 }
 section.list ul{
     display: flex;
