@@ -1,0 +1,136 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+    height: 10vh;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+}
+
+nav span{
+    font-size: 7vh;
+    font-weight: 700;
+    color:rgb(73, 0, 107);
+    text-shadow: 2px 2px 5px rgb(202, 115, 240);
+    margin-left: 10px;
+}
+
+nav form{
+    margin:auto;
+}
+nav form input{
+    border-radius: 10px;
+    border: 2px black solid;
+    height: 30px;
+    width: 300px;
+    padding: 5px;
+}
+nav form input[data-jscolor]{
+    width: 120px;
+}
+nav form button.add{
+    height: 30px;
+    border:2px black solid;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(114, 8, 114);
+}
+
+
+nav form select{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px black solid;
+    color: rgba(0,0,0,0);
+}
+
+section.list{
+    min-height: 90vh;
+    background-color: rgb(255, 202, 255);
+}
+section.list ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 50px;
+    list-style-type: none;
+}
+
+
+.todolist li{
+    margin:20px;
+    width: 200px;
+    min-height: 50px;
+    background-color: #fff;
+
+    position:relative;
+    padding: 30px 5px 5px 5px;
+
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: rgba(0,0,0,0.8);
+    text-transform: uppercase;
+    word-wrap: break-word;
+    text-align: center;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0px 0px 7px 1px black;
+}
+.todolist li div:nth-child(1){
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.todolist li div:nth-child(2){
+    top:0;
+    left:0;
+    width: 190px;
+    min-height: calc(100% - 35px);
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 5px;
+}
+.todolist li button{
+    position:absolute;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 7px;
+    border:1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+}
+button:hover{
+    filter: brightness(1.5);
+    transform: scale(1.05);
+}
+button{
+    transition: linear 0.05s;
+}
+
+.deleteBtn{
+    right: 2px;
+}
+.editBtn{
+    right: 24px;
+}
+.doneBtn{
+    right: 46px;
+}
+
+li[data-done="true"]{
+    filter:brightness(0.2);
+}
