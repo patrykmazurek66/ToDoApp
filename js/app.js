@@ -11,6 +11,7 @@ console.log(colorPicker.value);
 
 function add(e){
     e.preventDefault();
+    
     const input = inputHTML.value;
     const color = colorPicker.value;
     if(input ===''){
