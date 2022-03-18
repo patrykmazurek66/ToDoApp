@@ -9,9 +9,8 @@ let elementsNum = 0;
 
 console.log(colorPicker.value);
 
-function add(e){
-    e.preventDefault();
-    
+function add(){
+
     const input = inputHTML.value;
     const color = colorPicker.value;
     if(input ===''){
@@ -74,7 +73,10 @@ function loadColorsList(){
 }
 
 
-addBtn.addEventListener('click',add);
+addBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    add();
+    });
 
 
 loadColorsList();
