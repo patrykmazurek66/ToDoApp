@@ -134,3 +134,15 @@ button{
 li[data-done="true"]{
     filter:brightness(0.2);
 }
+
+@media (max-width: 1024px) {
+    nav span{
+        font-size: 4vh;
+        margin-left: 5px;
+    }
+    nav form input{
+        width: 200px;
+
+    }
+    
+}
