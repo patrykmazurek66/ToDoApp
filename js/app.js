@@ -7,11 +7,12 @@ const colorPicker = document.querySelector('input[data-jscolor]');
 let elementsArray = [];
 let elementsNum = 0;
 
-console.log(colorPicker.value);
+//console.log(colorPicker.value);
 
-function add(){
-
-    const input = inputHTML.value;
+function add(input = ''){
+    if(input === ''){
+         input = inputHTML.value;
+    }
     const color = colorPicker.value;
     if(input ===''){
         alert("Can't be empty!");
@@ -21,11 +22,12 @@ function add(){
     const newItem = new listItem(input,color);
     elementsArray.push(newItem);
     elementsNum++;
-    console.log(elementsArray)
+ 
     refresh();
 }
 
 function refresh(){
+    saveNotes(elementsArray);
     listHTML.innerHTML='';
     for(let i=0;i<elementsArray.length;i++){
         const newItemList = document.createElement('li');   //tworzenie nowego elementu
@@ -61,15 +63,26 @@ function refresh(){
     }
 }
 
-function updateColorSelect(){
-    colorOption.style.backgroundColor = colorOption.value;
+
+
+
+
+function saveNotes(items){
+    window.localStorage.clear();
+    for(let i = 0;i<items.length;i++){
+        window.localStorage.setItem(`notes-${i}`,JSON.stringify(items[i]));
+    }
+    window.localStorage.setItem("notesAmmount", elementsNum);
 }
 
-function loadColorsList(){
-    for (const option of colorList) {
-        option.style.backgroundColor = option.value;
-        option.addEventListener("click",updateColorSelect);
+function loadNotes(){
+    elementsNum = window.localStorage.getItem("notesAmmount");
+    for(let i=0;i<elementsNum;i++){
+        let newItem = JSON.parse(window.localStorage.getItem(`notes-${i}`));
+        Object.setPrototypeOf(newItem, new listItem());
+        elementsArray.push(newItem);
     }
+    refresh();
 }
 
 
@@ -78,8 +91,9 @@ addBtn.addEventListener('click',(e)=>{
     add();
     });
 
+loadNotes();
 
-loadColorsList();
-updateColorSelect();
+
+
 
 
