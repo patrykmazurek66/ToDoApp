@@ -1,21 +1,39 @@
+:root{
+    --backgroundColor:#9EE5D2;
+    --borderColor:#7089E5;
+    --textColor:#536199;
+    --mainColor:#62998A;
+}
+
+
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+button{
+    cursor: pointer;
+    
+}
 nav{
     height: 10vh;
-    background-color: #333;
+    background-color: var(--mainColor);
     display: flex;
     align-items: center;
+    border-bottom: 2px solid var(--borderColor) ;    
 }
 
 nav span{
-    font-size: 7vh;
+    background-color: var(--backgroundColor);
+    padding: 10px;
+    border-radius: 25px;
+    border:solid 4px var(--borderColor);
+    box-shadow: 2px 2px 5px #000;
+    font-size: 4vh;
     font-weight: 700;
-    color:rgb(73, 0, 107);
-    text-shadow: 2px 2px 5px rgb(202, 115, 240);
+    color:var(--textColor);
     margin-left: 10px;
 }
 
@@ -24,20 +42,27 @@ nav form{
 }
 nav form input{
     border-radius: 10px;
-    border: 2px black solid;
+    border: 3px var(--borderColor) solid;
     height: 30px;
     width: 300px;
     padding: 5px;
+    box-shadow: 2px 2px 5px #000;
 }
+nav form input:focus{
+    outline:none;
+}
+
 nav form input[data-jscolor]{
     width: 120px;
 }
 nav form button.add{
     height: 30px;
-    border:2px black solid;
+    border:3px var(--borderColor) solid;
+    color: var(--textColor);
     border-radius: 5px;
     padding: 5px;
-    background-color: rgb(114, 8, 114);
+    background-color: var(--backgroundColor);
+    box-shadow: 2px 2px 5px #000;
 }
 
 
@@ -51,7 +76,7 @@ nav form select{
 
 section.list{
     min-height: 90vh;
-    background-color: rgb(88, 75, 88);
+    background-color:var(--backgroundColor);
 }
 section.list ul{
     display: flex;
@@ -135,14 +160,12 @@ li[data-done="true"]{
     filter:brightness(0.2);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 700px) {
     nav span{
-        font-size: 4vh;
-        margin-left: 5px;
+    display: none;
     }
     nav form input{
         width: 200px;
-
     }
     
 }
