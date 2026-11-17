@@ -1,0 +1,6 @@
+id,nazwa,status,priorytet
+1,Zakupy spozywcze,do_zrobienia,wysoki
+2,Trening biegowy,w_trakcie,sredni
+3,Przeczytac rozdzial ksiazki,wykonane,niski
+4,Przygotowac raport,do_zrobienia,wysoki
+5,Podlac kwiaty,wykonane,niski
